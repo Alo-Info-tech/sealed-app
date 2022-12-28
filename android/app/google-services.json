@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "716378233694",
+    "project_id": "reno-sealed",
+    "storage_bucket": "reno-sealed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716378233694:android:cf2a192aff588fbcb74dcf",
+        "android_client_info": {
+          "package_name": "com.example.new_mobile_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716378233694-31fnlcf2v534rk8kg4qbmoigbsf0evli.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.new_mobile_application",
+            "certificate_hash": "74f939574223da008833668a32a4bcdc84d5f336"
+          }
+        },
+        {
+          "client_id": "716378233694-nqv01365f9tsqnumlt11k7ic9o459s3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDd0AbGbGUTvTC16M9kPhOfNz1uWiD9LY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716378233694-nqv01365f9tsqnumlt11k7ic9o459s3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
