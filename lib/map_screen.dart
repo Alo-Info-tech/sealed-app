@@ -27,7 +27,7 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   // static const kGoogleApiKey = '';
- static const kGoogleApiKey = 'AIzaSyDfaG1piL6bYVYsGNX1Lev3f-gptl1M_k8';
+  static const kGoogleApiKey = 'AIzaSyDfaG1piL6bYVYsGNX1Lev3f-gptl1M_k8';
   final homeScaffoldKey = GlobalKey<ScaffoldState>();
 
 //address for all details
@@ -106,42 +106,42 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   //api payment due to cancelled
-  getDirections() async {
-    List<LatLng> polylineCoordinates = [];
+  // getDirections() async {
+  //   List<LatLng> polylineCoordinates = [];
 
-    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-      kGoogleApiKey,
-      PointLatLng(startLocation!.latitude, startLocation!.longitude),
-      PointLatLng(endLocation.latitude, endLocation.longitude),
-      //travelMode: TravelMode.driving,
-    );
+  //   PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+  //     kGoogleApiKey,
+  //     PointLatLng(startLocation!.latitude, startLocation!.longitude),
+  //     PointLatLng(endLocation.latitude, endLocation.longitude),
+  //     //travelMode: TravelMode.driving,
+  //   );
 
-    if (result.points.isNotEmpty) {
-      result.points.forEach((PointLatLng point) {
-        polylineCoordinates.add(LatLng(point.latitude, point.longitude));
-      });
-    } else {
-      //  print(result.errorMessage);
-    }
+  //   if (result.points.isNotEmpty) {
+  //     result.points.forEach((PointLatLng point) {
+  //       polylineCoordinates.add(LatLng(point.latitude, point.longitude));
+  //     });
+  //   } else {
+  //     //  print(result.errorMessage);
+  //   }
 
-    //polulineCoordinates is the List of longitute and latidtude.
-    double totalDistance = 0;
-    for (var i = 0; i < polylineCoordinates.length - 1; i++) {
-      totalDistance += calculateDistance(
-          polylineCoordinates[i].latitude,
-          polylineCoordinates[i].longitude,
-          polylineCoordinates[i + 1].latitude,
-          polylineCoordinates[i + 1].longitude);
-    }
-    // print(totalDistance);
+  //   //polulineCoordinates is the List of longitute and latidtude.
+  //   double totalDistance = 0;
+  //   for (var i = 0; i < polylineCoordinates.length - 1; i++) {
+  //     totalDistance += calculateDistance(
+  //         polylineCoordinates[i].latitude,
+  //         polylineCoordinates[i].longitude,
+  //         polylineCoordinates[i + 1].latitude,
+  //         polylineCoordinates[i + 1].longitude);
+  //   }
+  //   // print(totalDistance);
 
-    setState(() {
-      distance = totalDistance;
-    });
+  //   setState(() {
+  //     distance = totalDistance;
+  //   });
 
-    //add to the list of poly line coordinates
-    addPolyLine(polylineCoordinates);
-  }
+  //   //add to the list of poly line coordinates
+  //   addPolyLine(polylineCoordinates);
+  // }
 
   addPolyLine(List<LatLng> polylineCoordinates) {
     PolylineId id = PolylineId("poly");
@@ -168,7 +168,7 @@ class _MapScreenState extends State<MapScreen> {
     return Scaffold(
         body: FutureBuilder(
             // future: getLocation(),
-              future: getDirections(),
+            //////////  //  future: getDirections(),
             builder: (context, snapshot) {
           return SafeArea(
             child: Stack(
@@ -640,6 +640,7 @@ class _MapScreenState extends State<MapScreen> {
         apiKey: kGoogleApiKey,
         // onError: onError,
         mode: _mode,
+        logo: Text(" "),
         language: 'en',
         strictbounds: false,
         types: [""],
@@ -659,7 +660,7 @@ class _MapScreenState extends State<MapScreen> {
 
   // void onError(PlacesAutocompleteResponse response) {
   //   homeScaffoldKey.currentState!
-  //       // ignore: deprecated_member_use
+  //       // ignore: deprecated_member_user
   //       .showSnackBar(SnackBar(content: Text(response.errorMessage!)));
   // }
 
