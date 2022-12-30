@@ -357,14 +357,14 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
                                         //height: 100,
                                         width: 240,
                                         child: ListView.builder(
-                                            scrollDirection: Axis.vertical,
+                                            scrollDirection: Axis.horizontal,
                                             shrinkWrap: true,
                                             //physics: NeverScrollableScrollPhysics(),
                                             itemCount:
                                                 selectedProductTiming.length,
                                             itemBuilder: (context, index) {
                                               return Text(
-                                                selectedProductTiming[index],
+                                                selectedProductTiming[index]+",",
                                               );
                                             }),
                                       ),

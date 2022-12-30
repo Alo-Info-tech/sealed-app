@@ -278,48 +278,57 @@ class _BankingServicesScreenState extends State<BankingServicesScreen> {
                   height: 5,
                 ),
                 InkWell(
-                  onTap: () {
-                    //documentDetailsBottomSheet(context);
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.all(0),
-                    width: double.infinity,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 2,
-                          offset: const Offset(
-                              0.2, 3), // changes position of shadow
-                        ),
-                      ],
-                      //Border.all
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      //Border.all
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          " Select Bank",
-                          style: TextStyle(
-                              fontFamily: 'Inter-Medium',
-                              fontSize: 12,
-                              color: Colors.grey.shade500),
-                        ),
-                        SizedBox(
-                          width: 150,
-                        ),
-                        Icon(MdiIcons.chevronDown)
-                      ],
-                    ),
-                  ),
-                ),
+                              onTap: () {
+                                documentDetailsBottomSheet(context);
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.all(0),
+                                width: double.infinity,
+                                height: 45,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.1),
+                                      spreadRadius: 1,
+                                      blurRadius: 2,
+                                      offset: const Offset(
+                                          0.2, 3), // changes position of shadow
+                                    ),
+                                  ],
+                                  //Border.all
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                  //Border.all
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      SizedBox(
+                                        //height: 100,
+                                        width: 240,
+                                        child: ListView.builder(
+                                            scrollDirection: Axis.horizontal,
+                                            shrinkWrap: true,
+                                            //physics: NeverScrollableScrollPhysics(),
+                                            itemCount:
+                                                selectedProductTiming.length,
+                                            itemBuilder: (context, index) {
+                                              return Text(
+                                                selectedProductTiming[index]+",",
+                                              );
+                                            }),
+                                      ),
+                                      Icon(MdiIcons.chevronDown)
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
                 SizedBox(
                   height: 10,
                 ),
